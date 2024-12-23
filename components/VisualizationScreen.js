@@ -16,19 +16,25 @@ const VisualizationScreen = () => {
       {/* Why it Helps Section */}
       <View style={styles.section}>
         <Text style={styles.subtitle}>Чому це допомагає з продуктивністю та тривогою?</Text>
-        <Text style={styles.bulletPoint}>• Є можливість регулярно практикувати</Text>
-        <Text style={styles.bulletPoint}>• Виконання дає дієвий ефект</Text>
+        <View style={styles.bulletPointContainer}>
+          <Text style={styles.bulletPoint}>• Є можливість регулярно практикувати</Text>
+          <Text style={styles.bulletPoint}>• Виконання дає дієвий ефект</Text>
+        </View>
       </View>
 
       {/* Visualization Steps Section */}
       <View style={styles.highlightSection}>
         <Text style={styles.subtitle}>Елементи візуалізації</Text>
-        <Text style={styles.bulletPoint}>• Зробіть вдих і розслабтесь</Text>
-        <Text style={styles.bulletPoint}>• Використовуйте різні органи відчуття та тілесні почуття</Text>
-        <Text style={styles.bulletPoint}>• Не поспішайте, не прокручуйте вперед, пройдіть кожен крок</Text>
-        <Text style={styles.bulletPoint}>• Візуалізуйте успішну роботу</Text>
-        <Text style={styles.bulletPoint}>• Якщо ви втрачаєте фокус, прийміть це і спробуйте повернутися до вправи</Text>
-        <Text style={styles.bulletPoint}>• Дотримуйтесь конкретної вправи</Text>
+        <View style={styles.bulletPointContainer}>
+          <Text style={styles.bulletPoint}>• Зробіть вдих і розслабтесь</Text>
+          <Text style={styles.bulletPoint}>• Використовуйте різні органи відчуття та тілесні почуття</Text>
+          <Text style={styles.bulletPoint}>• Не поспішайте, не прокручуйте вперед, пройдіть кожен крок</Text>
+          <Text style={styles.bulletPoint}>• Візуалізуйте успішну роботу</Text>
+          <Text style={styles.bulletPoint}>
+            • Якщо ви втрачаєте фокус, прийміть це і спробуйте повернутися до вправи
+          </Text>
+          <Text style={styles.bulletPoint}>• Дотримуйтесь конкретної вправи</Text>
+        </View>
       </View>
     </ScrollView>
   );
@@ -41,41 +47,58 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF8E1',
   },
   title: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
+    color: '#2E7D32',
     marginBottom: 16,
-    backgroundColor: '#FFEB3B',
+    backgroundColor: '#C8E6C9',
     padding: 10,
+    borderRadius: 8,
   },
   section: {
     marginBottom: 16,
-    padding: 10,
+    padding: 12,
     backgroundColor: '#FFFDE7',
     borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 2,
   },
   highlightSection: {
     marginBottom: 16,
-    padding: 10,
+    padding: 12,
     backgroundColor: '#FFECB3',
     borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 2,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
-    color: '#FBC02D',
-    marginBottom: 8,
+    color: '#F57C00',
+    marginBottom: 10,
   },
   paragraph: {
     fontSize: 16,
-    color: '#333',
+    color: '#424242',
+    lineHeight: 22,
     marginBottom: 8,
+    textAlign: 'justify',
+  },
+  bulletPointContainer: {
+    marginTop: 8,
   },
   bulletPoint: {
     fontSize: 16,
-    color: '#333',
-    marginBottom: 4,
+    color: '#424242',
+    lineHeight: 24,
+    marginBottom: 6,
   },
 });
 

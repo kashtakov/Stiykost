@@ -10,28 +10,23 @@ const GriefSupportScreen = () => {
       {/* Guidelines Section */}
       <View style={styles.section}>
         <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Надайте факти:</Text> Якщо ви можете, надайте факти про обставини втрати
+          <Text style={styles.bold}>Надайте факти:</Text> Якщо ви можете, надайте факти про обставини втрати.
         </Text>
         <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Активне слухання:</Text> Сконцентруйтесь на ситуації та вислухайте скорботну людину
+          <Text style={styles.bold}>Активне слухання:</Text> Сконцентруйтесь на ситуації та вислухайте скорботну людину.
         </Text>
         <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Нормалізація:</Text> Не применьшуючи втрати, скажіть скорботній людині, що її реакція нормальна та зрозуміла
+          <Text style={styles.bold}>Нормалізація:</Text> Не применшуючи втрати, скажіть скорботній людині, що її реакція нормальна та зрозуміла.
         </Text>
         <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Використовуйте ім’я:</Text> Не бійтеся називати покійного на ім’я
+          <Text style={styles.bold}>Використовуйте ім’я:</Text> Не бійтеся називати покійного на ім’я.
         </Text>
         <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Витримка:</Text> Будьте відкритими, щоб вислухати емоційний біль скорботної людини, вам не потрібно «виправляти» її
+          <Text style={styles.bold}>Витримка:</Text> Будьте відкритими, щоб вислухати емоційний біль скорботної людини, вам не потрібно «виправляти» її.
         </Text>
         <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Зберігайте власні психологічні межі:</Text> Чиясь втрата не обов'язково є вашою втратою; ви можете надавати допомогу, не поглинаючи це горе
+          <Text style={styles.bold}>Зберігайте власні психологічні межі:</Text> Чиясь втрата не обов'язково є вашою втратою; ви можете надавати допомогу, не поглинаючи це горе.
         </Text>
-      </View>
-
-      {/* Footer Section */}
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Горе</Text>
       </View>
     </ScrollView>
   );
@@ -41,41 +36,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F7FDF9', // Soft background for a soothing tone
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
-    marginBottom: 16,
-    backgroundColor: '#E1BEE7',
-    padding: 8,
+    color: '#4A148C',
+    marginBottom: 20,
+    backgroundColor: '#EDE7F6', // Light purple for grief-related context
+    padding: 12,
+    borderRadius: 10,
   },
   section: {
     marginBottom: 16,
-    padding: 10,
-    backgroundColor: '#E8F5E9',
-    borderRadius: 8,
+    padding: 16,
+    backgroundColor: '#EAFBF6', // Light green for encouragement
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   bulletPoint: {
     fontSize: 16,
     color: '#333',
+    lineHeight: 22,
     marginBottom: 8,
   },
   bold: {
     fontWeight: 'bold',
-  },
-  footer: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: '#424242',
-    alignItems: 'center',
-  },
-  footerText: {
-    fontSize: 18,
-    color: '#FFF',
-    fontWeight: 'bold',
+    color: '#1B5E20', // Highlighted green for emphasis
   },
 });
 

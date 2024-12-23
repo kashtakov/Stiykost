@@ -14,7 +14,7 @@ const SleepGuideScreen = () => {
           Сон має вирішальне значення для підтримки розумових здібностей, необхідних для успіху. Навіть такі прості завдання, як спілкування, керування автомобілем або побудова системи координат, можуть бути порушені недостатнім сном (менше 7-8 годин кожні 24 години).
         </Text>
         <Text style={styles.paragraph}>
-          Наприклад, солдат може втративши прицільність, але мішень може виявитися хибною. Польові операції та операції з енергурнуванням можуть створювати ситуації, коли недостатній сон стає нормою.
+          Наприклад, солдат може втратити прицільність, а мішень може виявитися хибною. Польові операції та операції з енерговитратами можуть створювати ситуації, коли недостатній сон стає нормою.
         </Text>
       </View>
 
@@ -29,11 +29,11 @@ const SleepGuideScreen = () => {
         <Text style={styles.indentedBulletPoint}>- Уникайте електроніки за 1 годину до сну</Text>
         <Text style={styles.indentedBulletPoint}>- Використовуйте ванну кімнату</Text>
         <Text style={styles.bulletPoint}>
-          • Підготуйте темне, прохолодне та тихе місце для сну, використовуйте затички для вух або вентилятор, щоб блокувати звуки, та прикривайте очі, щоб блокувати світло.
+          • Підготуйте темне, прохолодне та тихе місце для сну. Використовуйте затички для вух або вентилятор, щоб блокувати звуки, та прикривайте очі, щоб блокувати світло.
         </Text>
         <Text style={styles.bulletPoint}>• Прокидайтеся щодня в один і той же час</Text>
         <Text style={styles.bulletPoint}>
-          • Якщо ви прокидаєтеся від змін у протягом 2 тижнів і продовжуєте мати проблеми зі сном, зверніться до свого військового лікаря
+          • Якщо ви прокидаєтеся від змін у протягом 2 тижнів і продовжуєте мати проблеми зі сном, зверніться до свого військового лікаря.
         </Text>
       </View>
 
@@ -62,7 +62,7 @@ const SleepGuideScreen = () => {
           • Використовуйте денний сон, щоб отримати 7-8 годин сну на 24 години
         </Text>
         <Text style={styles.bulletPoint}>
-          • Використовуйте ліки для сну, лише у випадку, коли лікар вирішив, що це необхідно
+          • Використовуйте ліки для сну лише у випадку, коли лікар вирішив, що це необхідно
         </Text>
       </View>
     </ScrollView>
@@ -73,41 +73,52 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F7FDF9',
   },
   title: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
-    marginBottom: 16,
+    color: '#1976D2',
+    marginBottom: 20,
+    textShadowColor: '#CDEBE8',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
   },
   section: {
     marginBottom: 16,
-    padding: 10,
-    backgroundColor: '#E8F5E9',
-    borderRadius: 8,
+    padding: 16,
+    backgroundColor: '#EAFBF6',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
-    color: '#1976D2',
-    marginBottom: 8,
+    color: '#388E3C',
+    marginBottom: 12,
   },
   paragraph: {
     fontSize: 16,
     color: '#333',
-    marginBottom: 8,
+    lineHeight: 22,
+    marginBottom: 12,
   },
   bulletPoint: {
     fontSize: 16,
     color: '#333',
-    marginBottom: 4,
+    lineHeight: 22,
+    marginBottom: 8,
   },
   indentedBulletPoint: {
     fontSize: 16,
     color: '#333',
-    marginBottom: 4,
+    lineHeight: 22,
+    marginBottom: 8,
     paddingLeft: 16,
   },
 });

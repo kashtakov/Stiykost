@@ -28,9 +28,6 @@ export default function RelaxationScreen() {
         піднявши брови вгору. Затримайтесь на кілька секунд, зверніть увагу на напружені відчуття.
         Видихніть, зніміть напругу.
       </Text>
-
-      {/* Остальной текст может быть продолжен аналогично вышеописанным секциям */}
-
     </ScrollView>
   );
 }
@@ -39,36 +36,47 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#F0F8F8',
+    backgroundColor: '#F7FFFA',
   },
   title: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
-    color: '#008000',
+    color: '#2A9D8F',
     textAlign: 'center',
-    marginBottom: 15,
+    marginBottom: 20,
+    textShadowColor: '#CDEBE8',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
   },
   text: {
     fontSize: 16,
-    color: '#333333',
-    marginBottom: 10,
+    color: '#444',
+    lineHeight: 22,
+    marginBottom: 15,
     textAlign: 'justify',
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#005500',
-    marginVertical: 10,
+    color: '#2A6E65',
+    marginVertical: 15,
+    textAlign: 'center',
   },
   rulesContainer: {
-    backgroundColor: '#E0F7E0',
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 15,
+    backgroundColor: '#EAFBF6',
+    padding: 15,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    marginBottom: 20,
   },
   rule: {
     fontSize: 16,
-    color: '#333333',
-    marginBottom: 5,
+    color: '#444',
+    marginBottom: 10,
+    lineHeight: 20,
   },
 });

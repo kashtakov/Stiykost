@@ -1,40 +1,68 @@
-import { Text, View, StyleSheet, } from "react-native";
+import React from "react";
+import { Text, View, StyleSheet } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 
-function IcoverScreen({navigation}) {
+function IcoverScreen({ navigation }) {
+  useFocusEffect(
+    React.useCallback(() => {
+      navigation.setOptions({
+        headerStyle: { backgroundColor: "#da0d09" },
+        headerTintColor: "#fff",
+        headerTitleStyle: { fontWeight: "bold" },
+      });
+    }, [navigation])
+  );
 
-  useFocusEffect(()=>{
-    navigation.setOptions({ headerStyle: {backgroundColor: "#da0d09"}, headerTintColor: '#fff' })
-  })
-    return (
-      <View style={styles.icoverContainer}>
-        <View style={styles.icoverTextBackround}><Text style={styles.icoverText} >Індефікуй побратима, що потребує допомоги</Text></View>
-        <Text style={styles.icoverText}>Контакт</Text>
-        <View style={styles.icoverTextBackround}><Text style={styles.icoverText}>Обіцянка бути поруч</Text></View> 
-        <Text style={styles.icoverText}>Веріфікація фактів</Text>
-        <View style={styles.icoverTextBackround}><Text style={styles.icoverText}>Етапи подій</Text></View> 
-        <Text style={styles.icoverText}>Реалізація</Text>
+  return (
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <Text style={styles.cardText}>
+          Індефікуй побратима, що потребує допомоги
+        </Text>
       </View>
-    );
-  }
+      <View style={styles.card}>
+        <Text style={styles.cardText}>Контакт</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.cardText}>Обіцянка бути поруч</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.cardText}>Веріфікація фактів</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.cardText}>Етапи подій</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.cardText}>Реалізація</Text>
+      </View>
+    </View>
+  );
+}
 
-  export default IcoverScreen;
+export default IcoverScreen;
 
-  const styles = StyleSheet.create({
-    icoverContainer:{
-     borderWidth: 1,
-      width:'100%',
-      alignItems:"center", 
-     
-    },
-    icoverTextBackround:{
-      width: '100%',
-      backgroundColor:'#f3b29f'
-    }, 
-    icoverText:{
-      width:'100%',
-      fontSize:32,
-      padding:10,
-    }
-
-  });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+    paddingHorizontal: 20,
+    justifyContent: "center",
+  },
+  card: {
+    backgroundColor: "#da0d09",
+    borderRadius: 10,
+    padding: 20,
+    marginVertical: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3, // For Android shadow
+  },
+  cardText: {
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "600",
+    textAlign: "center",
+  },
+});

@@ -9,22 +9,27 @@ const MindfulBreathingScreen = () => {
 
       {/* Description Section */}
       <View style={styles.section}>
-        <Text style={styles.subtitle}>Що?</Text>
-        <Text style={styles.paragraph}>Повільне, глибоке дихання животом</Text>
+        <Text style={styles.subtitle}>Що це?</Text>
+        <Text style={styles.paragraph}>Повільне, глибоке дихання животом, яке допомагає заспокоїти розум і зосередитися.</Text>
       </View>
 
       {/* Steps Section */}
       <View style={styles.section}>
-        <Text style={styles.subtitle}>Як?</Text>
-        <Text style={styles.bulletPoint}>• Візьміть тактичну паузу</Text>
-        <Text style={styles.bulletPoint}>• Зробіть 1-2 усвідомлених подихів</Text>
-        <Text style={styles.bulletPoint}>• Виконайте завдання</Text>
+        <Text style={styles.subtitle}>Як це робити?</Text>
+        <Text style={styles.bulletPoint}>• Візьміть тактичну паузу.</Text>
+        <Text style={styles.bulletPoint}>• Зробіть 1-2 усвідомлених подихів.</Text>
+        <Text style={styles.bulletPoint}>• Виконайте завдання, залишаючись зосередженими.</Text>
       </View>
 
-      {/* Footer Icon */}
-      <View style={styles.footer}>
-        <Text style={styles.footerIcon}>🌬️</Text>
+      {/* Benefits Section */}
+      <View style={styles.section}>
+        <Text style={styles.subtitle}>Переваги</Text>
+        <Text style={styles.bulletPoint}>• Допомагає зменшити рівень стресу.</Text>
+        <Text style={styles.bulletPoint}>• Покращує концентрацію під час виконання важливих завдань.</Text>
+        <Text style={styles.bulletPoint}>• Сприяє швидкому відновленню під час напружених ситуацій.</Text>
       </View>
+
+     
     </ScrollView>
   );
 };
@@ -33,46 +38,54 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: '#FFF8E1', // Soft yellow background
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
-    marginBottom: 16,
-    backgroundColor: '#FFEB3B',
-    padding: 8,
+    color: '#F57F17',
+    marginBottom: 20,
+    backgroundColor: '#FFEB3B', // Bright yellow for title background
+    padding: 10,
+    borderRadius: 8,
   },
   section: {
     marginBottom: 16,
-    padding: 10,
+    padding: 16,
     backgroundColor: '#FFFDE7',
-    borderRadius: 8,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   subtitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#FBC02D',
-    marginBottom: 8,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#F57F17',
+    marginBottom: 12,
   },
   paragraph: {
     fontSize: 16,
     color: '#333',
+    lineHeight: 22,
     marginBottom: 8,
   },
   bulletPoint: {
     fontSize: 16,
     color: '#333',
-    marginBottom: 4,
+    lineHeight: 22,
+    marginBottom: 8,
   },
   footer: {
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: 20,
   },
   footerIcon: {
-    fontSize: 32,
-    color: '#FBC02D',
+    fontSize: 40,
+    color: '#F57F17',
   },
 });
 

@@ -8,19 +8,20 @@ const GroundingScreen = () => {
       <Text style={styles.title}>“Заземлення”</Text>
 
       {/* Description Section */}
-      <View style={styles.section}>
+      <View style={styles.card}>
         <Text style={styles.subtitle}>Що?</Text>
         <Text style={styles.paragraph}>Повернення уваги до теперішнього моменту</Text>
       </View>
 
       {/* How Section */}
-      <View style={styles.section}>
+      <View style={styles.card}>
         <Text style={styles.subtitle}>Як?</Text>
         <Text style={styles.paragraph}>Визначте 3 речі, які ви:</Text>
       </View>
 
-      {/* Table Section */}
-      <View style={styles.table}>
+      {/* Grounding Details */}
+      <View style={styles.row}>
+        {/* Sight Column */}
         <View style={styles.column}>
           <Text style={styles.columnTitle}>Бачите</Text>
           <Text style={styles.bulletPoint}>• Побратим</Text>
@@ -28,6 +29,8 @@ const GroundingScreen = () => {
           <Text style={styles.bulletPoint}>• Шолом</Text>
           <Text style={styles.icon}>👁️</Text>
         </View>
+
+        {/* Hearing Column */}
         <View style={styles.column}>
           <Text style={styles.columnTitle}>Чуєте</Text>
           <Text style={styles.bulletPoint}>• Хтось розмовляє</Text>
@@ -35,6 +38,8 @@ const GroundingScreen = () => {
           <Text style={styles.bulletPoint}>• Артилерійська стрілянина</Text>
           <Text style={styles.icon}>👂</Text>
         </View>
+
+        {/* Feeling Column */}
         <View style={styles.column}>
           <Text style={styles.columnTitle}>Відчуваєте</Text>
           <Text style={styles.bulletPoint}>• Зброя в моїх руках</Text>
@@ -51,65 +56,75 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: '#F5F5F5',
   },
   title: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
+    color: '#2E7D32',
     marginBottom: 16,
-    backgroundColor: '#FFEB3B',
-    padding: 10,
-  },
-  section: {
-    marginBottom: 16,
-    padding: 10,
-    backgroundColor: '#FFFDE7',
+    backgroundColor: '#C8E6C9',
+    padding: 12,
     borderRadius: 8,
+  },
+  card: {
+    marginBottom: 16,
+    padding: 8,
+    backgroundColor: '#FFFDE7',
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   subtitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#333',
-    marginBottom: 4,
+    marginBottom: 8,
   },
   paragraph: {
     fontSize: 16,
-    color: '#333',
-    marginBottom: 8,
+    color: '#424242',
+    lineHeight: 22,
   },
-  table: {
+  row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#FFECB3',
-    borderRadius: 8,
-    padding: 10,
+    marginTop: 16,
   },
   column: {
     flex: 1,
     padding: 10,
     marginHorizontal: 4,
-    backgroundColor: '#FFFDE7',
-    borderRadius: 8,
+    backgroundColor: '#FFECB3',
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
     alignItems: 'center',
   },
   columnTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#FBC02D',
+    color: '#F57C00',
     marginBottom: 8,
+    textAlign: 'center',
   },
   bulletPoint: {
     fontSize: 16,
-    color: '#333',
+    color: '#424242',
     marginBottom: 4,
     textAlign: 'center',
   },
   icon: {
     fontSize: 32,
     marginTop: 10,
-    color: '#FBC02D',
+    color: '#F57C00',
   },
 });
 

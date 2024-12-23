@@ -7,35 +7,35 @@ const ActiveGratitudeScreen = () => {
       {/* Title Section */}
       <Text style={styles.title}>Активна вдячність</Text>
 
-      {/* Three Columns Section */}
+      {/* Content Section */}
       <View style={styles.row}>
         {/* What Section */}
-        <View style={styles.column}>
-          <Text style={styles.columnTitle}>Що?</Text>
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>Що?</Text>
           <Text style={styles.bulletPoint}>• Зосередьте свою увагу на хороших речах, що відбуваються</Text>
           <Text style={styles.bulletPoint}>• Знаходьте маленькі моменти у повсякденному житті</Text>
         </View>
 
         {/* When Section */}
-        <View style={styles.column}>
-          <Text style={styles.columnTitle}>Коли?</Text>
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>Коли?</Text>
           <Text style={styles.bulletPoint}>• Щоденно, та постійно</Text>
           <Text style={styles.bulletPoint}>• Коли у вас є час на роздуми</Text>
           <Text style={styles.bulletPoint}>• У розмові з іншими</Text>
         </View>
-
-        {/* How Section */}
-        <View style={styles.column}>
-          <Text style={styles.columnTitle}>Як?</Text>
-          <Text style={styles.paragraph}>Крок 1: Визначте, що з того, що сталося, ви цінуєте</Text>
-          <Text style={styles.paragraph}>Крок 2: Помітьте 3 гарні речі, які сталися</Text>
-          <Text style={styles.paragraph}>Крок 3: Витратьте хвилину на роздуми над кожним з них</Text>
-          <Text style={styles.bulletPoint}>• Запитайте себе, що це означає для вас</Text>
-          <Text style={styles.bulletPoint}>• Визначте, як ви можете отримати більше від цього досвіду</Text>
-        </View>
       </View>
 
-      {/* Footer Icon */}
+      {/* How Section */}
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Як?</Text>
+        <Text style={styles.paragraph}>Крок 1: Визначте, що з того, що сталося, ви цінуєте</Text>
+        <Text style={styles.paragraph}>Крок 2: Помітьте 3 гарні речі, які сталися</Text>
+        <Text style={styles.paragraph}>Крок 3: Витратьте хвилину на роздуми над кожним з них</Text>
+        <Text style={styles.bulletPoint}>• Запитайте себе, що це означає для вас</Text>
+        <Text style={styles.bulletPoint}>• Визначте, як ви можете отримати більше від цього досвіду</Text>
+      </View>
+
+      {/* Footer Section */}
       <View style={styles.footer}>
         <Text style={styles.footerIcon}>☕</Text>
       </View>
@@ -57,19 +57,26 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     backgroundColor: '#FFEB3B',
     padding: 10,
+    borderRadius: 8,
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 16,
   },
-  column: {
+  card: {
     flex: 1,
     backgroundColor: '#FFECB3',
-    padding: 10,
+    padding: 12,
     marginHorizontal: 4,
-    borderRadius: 8,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  columnTitle: {
+  cardTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#FBC02D',
@@ -80,6 +87,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
     marginBottom: 8,
+    lineHeight: 22,
   },
   bulletPoint: {
     fontSize: 16,

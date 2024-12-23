@@ -1,50 +1,72 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 
-const MentalStateObservationScreen = () => {
+const UsefulPhrasesScreen = () => {
+  const sections = [
+    {
+      title: "Відкриті питання",
+      phrases: [
+        "Як в тебе справи останнім часом?",
+        "Я помітив/помітила, що... Можеш розповісти мені більше про те, що відбувається?",
+        "Що ти робив/ла, щоб впоратися зі стресом?",
+        "Як вважаєш, ти справляєшся з цією ситуацією?",
+      ],
+    },
+    {
+      title: "Уточнювальні питання",
+      phrases: [
+        "Розкажи про це більше.",
+        "Що змушує тебе так думати?",
+        "Коли ти це помітив вперше?",
+        "Ти виявляв переживав щось подібне?",
+      ],
+    },
+    {
+      title: "Підтвердити або підвести підсумки",
+      phrases: [
+        "Тож, ти говориш, що...",
+        "Ти маєш на увазі, що...",
+        "Звучить так, що...",
+      ],
+    },
+    {
+      title: "Висловити стурбованність (Я-твердження)",
+      phrases: [
+        "Я переживаю за справи нашої команди.",
+        "Мене непокоїть, що ти так багато береш на себе і на інших.",
+        "Після того, що сталося, я хотів/хотіла б побачити, як в тебе справи.",
+      ],
+    },
+  ];
+
+  const handlePhrasePress = (phrase) => {
+    Alert.alert("Обрано фразу", phrase);
+  };
+
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Сфери дослідження психічного стану</Text>
-      <Text style={styles.subtitle}>
-        Спирайтеся на наступні сфери, щоб побудувати своє спостереження під час клінічного інтерв'ю
-      </Text>
-
-      <View style={styles.section}>
-        <Text style={styles.header}>Зовнішній вигляд і поведінка</Text>
-        <Text style={styles.text}>Чи виглядає він/вона охайно?</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.header}>Настрій та емоції</Text>
-        <Text style={styles.text}>(Настрій) Як, він/вона говорить, який в них настрій?</Text>
-        <Text style={styles.text}>(Емоції) В якому він/вона емоційному стані?</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.header}>Рухова активність</Text>
-        <Text style={styles.text}>
-          Чи він/вона крокує із сторони в сторону, заламує руки, не може всидіти на місці?
-        </Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.header}>Орієнтування</Text>
-        <Text style={styles.text}>Чи здатний/а він/вона впізнавати, де знаходиться?</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.header}>Мовлення</Text>
-        <Text style={styles.text}>Чи є в нього/неї якісь значні особливості способу мовлення?</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.header}>Процес мислення</Text>
-        <Text style={styles.text}>
-          Чи здаються його/її думки організованими та послідовними?
-        </Text>
-      </View>
-
-      
+      <Text style={styles.title}>Корисні фрази для оцінки</Text>
+      {sections.map((section, index) => (
+        <View key={index} style={styles.section}>
+          <Text style={styles.header}>{section.title}</Text>
+          {section.phrases.map((phrase, idx) => (
+            <TouchableOpacity
+              key={idx}
+              style={styles.phraseContainer}
+              onPress={() => handlePhrasePress(phrase)}
+            >
+              <Text style={styles.text}>{phrase}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      ))}
     </ScrollView>
   );
 };
@@ -52,44 +74,50 @@ const MentalStateObservationScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-    backgroundColor: '#F5F5F5',
+    padding: 20,
+    backgroundColor: "#fefefe",
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 16,
-    color: '#006400',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#333',
-    textAlign: 'center',
+    fontSize: 28,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#2a9d8f",
     marginBottom: 20,
   },
   section: {
-    marginBottom: 20,
+    marginBottom: 30,
+    padding: 10,
+    backgroundColor: "#e9f5f2",
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
   },
   header: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#006400',
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#264653",
     marginBottom: 10,
+    textAlign: "center",
+  },
+  phraseContainer: {
+    backgroundColor: "#f4f9f4",
+    padding: 12,
+    marginVertical: 6,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 2,
   },
   text: {
     fontSize: 16,
-    color: '#333',
-    marginBottom: 5,
-  },
-  footer: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#008000',
-    marginTop: 20,
-    marginBottom: 10,
+    color: "#333",
+    textAlign: "center",
   },
 });
 
-export default MentalStateObservationScreen;
+export default UsefulPhrasesScreen;

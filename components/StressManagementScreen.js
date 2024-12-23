@@ -7,43 +7,37 @@ const StressManagementScreen = () => {
       {/* Title Section */}
       <Text style={styles.title}>Управління стресом під час операцій</Text>
 
-      {/* Stress Management Table */}
-      <View style={styles.table}>
-        {/* Preparation Column */}
-        <View style={styles.column}>
-          <Text style={styles.columnTitle}>Підготовка</Text>
-          <Text style={styles.bulletPoint}>• Усвідомлене дихання (довга форма)</Text>
-          <Text style={styles.bulletPoint}>• Візуалізація</Text>
-          <Text style={styles.bulletPoint}>• Розмова з собою</Text>
-          <Text style={styles.bulletPoint}>• Розмова з побратимом</Text>
-          <Text style={styles.bulletPoint}>• "Відкладання хвилювань"</Text>
-        </View>
-
-        {/* Productivity Column */}
-        <View style={styles.column}>
-          <Text style={styles.columnTitle}>Продуктивність</Text>
-          <Text style={styles.bulletPoint}>• Процедури перед місією</Text>
-          <Text style={styles.bulletPoint}>• Слова-сигнали</Text>
-          <Text style={styles.bulletPoint}>• Усвідомлене дихання (Коротка форма)</Text>
-          <Text style={styles.bulletPoint}>• "Що важливо зараз"</Text>
-          <Text style={styles.bulletPoint}>• Контролювати те, що можна контролювати</Text>
-          <Text style={styles.bulletPoint}>• "Заземлення"</Text>
-        </View>
-
-        {/* Recovery Column */}
-        <View style={styles.column}>
-          <Text style={styles.columnTitle}>Відновлення</Text>
-          <Text style={styles.bulletPoint}>• Переосмислення</Text>
-          <Text style={styles.bulletPoint}>• Дистанціювання: техніка 5,5,5</Text>
-          <Text style={styles.bulletPoint}>• Відволікання за задумом</Text>
-          <Text style={styles.bulletPoint}>• Активна вдячність</Text>
-        </View>
+      {/* Preparation Section */}
+      <View style={[styles.section, styles.preparationSection]}>
+        <Text style={styles.sectionTitle}>Підготовка</Text>
+        <Text style={styles.bulletPoint}>• Усвідомлене дихання (довга форма)</Text>
+        <Text style={styles.bulletPoint}>• Візуалізація</Text>
+        <Text style={styles.bulletPoint}>• Розмова з собою</Text>
+        <Text style={styles.bulletPoint}>• Розмова з побратимом</Text>
+        <Text style={styles.bulletPoint}>• "Відкладання хвилювань"</Text>
       </View>
 
-      {/* Footer Icon */}
-      <View style={styles.footer}>
-        <Text style={styles.footerIcon}>🪖</Text>
+      {/* Productivity Section */}
+      <View style={[styles.section, styles.productivitySection]}>
+        <Text style={styles.sectionTitle}>Продуктивність</Text>
+        <Text style={styles.bulletPoint}>• Процедури перед місією</Text>
+        <Text style={styles.bulletPoint}>• Слова-сигнали</Text>
+        <Text style={styles.bulletPoint}>• Усвідомлене дихання (Коротка форма)</Text>
+        <Text style={styles.bulletPoint}>• "Що важливо зараз"</Text>
+        <Text style={styles.bulletPoint}>• Контролювати те, що можна контролювати</Text>
+        <Text style={styles.bulletPoint}>• "Заземлення"</Text>
       </View>
+
+      {/* Recovery Section */}
+      <View style={[styles.section, styles.recoverySection]}>
+        <Text style={styles.sectionTitle}>Відновлення</Text>
+        <Text style={styles.bulletPoint}>• Переосмислення</Text>
+        <Text style={styles.bulletPoint}>• Дистанціювання: техніка 5,5,5</Text>
+        <Text style={styles.bulletPoint}>• Відволікання за задумом</Text>
+        <Text style={styles.bulletPoint}>• Активна вдячність</Text>
+      </View>
+
+      
     </ScrollView>
   );
 };
@@ -55,43 +49,51 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF8E1',
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
+    color: '#F57F17',
+    marginBottom: 20,
+  },
+  section: {
     marginBottom: 16,
+    padding: 16,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  table: {
-    flexDirection: 'row',
-    backgroundColor: '#FFF9C4',
-    borderRadius: 8,
-    overflow: 'hidden',
+  preparationSection: {
+    backgroundColor: '#FFFDE7',
   },
-  column: {
-    flex: 1,
-    padding: 10,
-    borderRightWidth: 1,
-    borderRightColor: '#FFECB3',
+  productivitySection: {
+    backgroundColor: '#FFECB3',
   },
-  columnTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#FBC02D',
-    marginBottom: 8,
+  recoverySection: {
+    backgroundColor: '#FFCC80',
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#F57F17',
+    marginBottom: 12,
     textAlign: 'center',
   },
   bulletPoint: {
     fontSize: 16,
     color: '#333',
-    marginBottom: 4,
+    lineHeight: 22,
+    marginBottom: 6,
   },
   footer: {
     alignItems: 'center',
     marginTop: 16,
   },
   footerIcon: {
-    fontSize: 32,
-    color: '#FBC02D',
+    fontSize: 36,
+    color: '#F57F17',
   },
 });
 

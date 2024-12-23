@@ -10,32 +10,39 @@ const TalkingTechniquesScreen = () => {
       {/* Two Columns Section */}
       <View style={styles.row}>
         {/* Talking to Yourself */}
-        <View style={styles.column}>
+        <View style={[styles.column, styles.columnLeft]}>
           <Text style={styles.columnTitle}>Розмова з собою</Text>
-          <Text style={styles.subtitle}>Що?</Text>
-          <Text style={styles.paragraph}>Тренування себе</Text>
-          <Text style={styles.subtitle}>Як?</Text>
-          <Text style={styles.bulletPoint}>• Використовуйте мотивуючі слова або фрази, які підвищать впевненість у собі</Text>
-          <Text style={styles.bulletPoint}>• Обговоріть з собою процедуру виконання завдання</Text>
+          <View style={styles.section}>
+            <Text style={styles.subtitle}>Що?</Text>
+            <Text style={styles.paragraph}>Тренування себе</Text>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.subtitle}>Як?</Text>
+            <Text style={styles.bulletPoint}>• Використовуйте мотивуючі слова або фрази, які підвищать впевненість у собі</Text>
+            <Text style={styles.bulletPoint}>• Обговоріть з собою процедуру виконання завдання</Text>
+          </View>
         </View>
 
         {/* Talking to a Teammate */}
-        <View style={styles.column}>
+        <View style={[styles.column, styles.columnRight]}>
           <Text style={styles.columnTitle}>Розмова з товаришем</Text>
-          <Text style={styles.subtitle}>Що?</Text>
-          <Text style={styles.paragraph}>Тренування свого побратима</Text>
-          <Text style={styles.subtitle}>Як?</Text>
-          <Text style={styles.bulletPoint}>• Мотиваційно: "у тебе все вийде"</Text>
-          <Text style={styles.bulletPoint}>
-            • Інструкційно: "масивна кровотеча, дихальні шляхи, дихання, кровообіг, черепно-мозкова травма/гіпотермія"
-          </Text>
+          <View style={styles.section}>
+            <Text style={styles.subtitle}>Що?</Text>
+            <Text style={styles.paragraph}>Тренування свого побратима</Text>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.subtitle}>
+            
+              Як?</Text>
+            <Text style={styles.bulletPoint}>• Мотиваційно: "у тебе все вийде"</Text>
+            <Text style={styles.bulletPoint}>
+              • Інструкційно: "масивна кровотеча, дихальні шляхи, дихання, кровообіг, черепно-мозкова травма/гіпотермія"
+            </Text>
+          </View>
         </View>
       </View>
 
-      {/* Footer Icon */}
-      <View style={styles.footer}>
-        <Text style={styles.footerIcon}>💬</Text>
-      </View>
+     
     </ScrollView>
   );
 };
@@ -43,15 +50,18 @@ const TalkingTechniquesScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: 5,
     backgroundColor: '#FFF8E1',
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
+    color: '#2E7D32',
     marginBottom: 16,
+    backgroundColor: '#C8E6C9',
+    padding: 8,
+    borderRadius: 8,
   },
   row: {
     flexDirection: 'row',
@@ -59,41 +69,65 @@ const styles = StyleSheet.create({
   },
   column: {
     flex: 1,
-    backgroundColor: '#FFECB3',
-    padding: 10,
+    padding: 12,
     marginHorizontal: 4,
+    backgroundColor: '#FFECB3',
     borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  columnLeft: {
+    marginRight: 8,
+  },
+  columnRight: {
+    marginLeft: 8,
   },
   columnTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#FBC02D',
-    marginBottom: 8,
     textAlign: 'center',
+    marginBottom: 12,
+  },
+  section: {
+    marginBottom: 12,
   },
   subtitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#333',
+    color: '#424242',
     marginBottom: 4,
   },
   paragraph: {
     fontSize: 16,
-    color: '#333',
+    color: '#424242',
     marginBottom: 8,
+    lineHeight: 22,
   },
   bulletPoint: {
     fontSize: 16,
-    color: '#333',
-    marginBottom: 4,
+    color: '#424242',
+    marginBottom: 6,
+    lineHeight: 22,
   },
   footer: {
     alignItems: 'center',
     marginTop: 16,
+    padding: 12,
+    backgroundColor: '#C8E6C9',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   footerIcon: {
     fontSize: 32,
-    color: '#FBC02D',
+    color: '#2E7D32',
   },
 });
 
