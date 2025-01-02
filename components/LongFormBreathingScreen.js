@@ -28,7 +28,7 @@ const LongFormBreathingScreen = () => {
       {/* Breathing Cycle Image */}
       <View style={styles.imageContainer}>
         <Image
-          source={require('../assets/images/breath.png')}
+          source={require('../assets/images/breathe.png')}
           style={styles.image}
         />
         <Text style={styles.imageCaption}>

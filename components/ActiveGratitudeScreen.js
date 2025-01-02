@@ -35,10 +35,8 @@ const ActiveGratitudeScreen = () => {
         <Text style={styles.bulletPoint}>• Визначте, як ви можете отримати більше від цього досвіду</Text>
       </View>
 
-      {/* Footer Section */}
-      <View style={styles.footer}>
-        <Text style={styles.footerIcon}>☕</Text>
-      </View>
+     
+     
     </ScrollView>
   );
 };

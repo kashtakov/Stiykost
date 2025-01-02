@@ -35,7 +35,7 @@ const GroundingScreen = () => {
           <Text style={styles.columnTitle}>Чуєте</Text>
           <Text style={styles.bulletPoint}>• Хтось розмовляє</Text>
           <Text style={styles.bulletPoint}>• Працює двигун</Text>
-          <Text style={styles.bulletPoint}>• Артилерійська стрілянина</Text>
+          <Text style={styles.bulletPoint}>• Артилерія</Text>
           <Text style={styles.icon}>👂</Text>
         </View>
 
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   column: {
     flex: 1,
-    padding: 10,
+    padding: 5,
     marginHorizontal: 4,
     backgroundColor: '#FFECB3',
     borderRadius: 12,
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 32,
-    marginTop: 10,
+    marginBottom: 10,
     color: '#F57C00',
   },
 });

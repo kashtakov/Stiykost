@@ -1,6 +1,8 @@
 import React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, View, Text } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
+
+// Imported Components
 import IntroductionSection from "../components/IntroductionSection";
 import StressHelpSection from "../components/StressHelpSection";
 import TableAdaptation from "../assets/tables/TableAdaptation";
@@ -23,11 +25,18 @@ function AdaptationScreen({ navigation }) {
 
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Адаптація</Text>
+        <Text style={styles.subtitle}>
+          Ключові техніки та знання для адаптації під час стресових умов.
+        </Text>
+      </View>
+
       <IntroductionSection />
       <TableAdaptation />
       <StressHelpSection />
 
-      {/* Imported Components */}
+      {/* Additional Components */}
       <UsefulPhrasesScreen />
       <MentalStateObservationScreen />
       <StressManagement />
@@ -46,5 +55,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F9FAFB",
+  },
+  titleContainer: {
+    padding: 16,
+    backgroundColor: "#EAFBF6",
+    borderBottomWidth: 1,
+    borderBottomColor: "#B7D6C5",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#0B5725",
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "#4A4A4A",
+    textAlign: "center",
   },
 });

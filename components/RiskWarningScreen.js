@@ -5,10 +5,12 @@ const RiskWarningScreen = () => {
   return (
     <ScrollView style={styles.container}>
       {/* Title Section */}
-      <Text style={styles.title}>Попередження про непотрібні ризики</Text>
+      <View style={styles.card}>
+        <Text style={styles.title}>Попередження про непотрібні ризики</Text>
+      </View>
 
       {/* Description Section */}
-      <View style={styles.section}>
+      <View style={styles.card}>
         <Text style={styles.bulletPoint}>
           • Можуть бути моменти, коли вам потрібно буде протидіяти непотрібним ризикам
         </Text>
@@ -21,17 +23,19 @@ const RiskWarningScreen = () => {
       </View>
 
       {/* Flow Diagram Section */}
-      <View style={styles.diagram}>
-        <View style={[styles.circle, { backgroundColor: '#4CAF50' }]}>
-          <Text style={styles.circleText}>Я стурбований</Text>
-        </View>
-        <Text style={styles.arrow}>➡️</Text>
-        <View style={[styles.circle, { backgroundColor: '#FFEB3B' }]}>
-          <Text style={styles.circleText}>Я дуже хвилююсь</Text>
-        </View>
-        <Text style={styles.arrow}>➡️</Text>
-        <View style={[styles.circle, { backgroundColor: '#F44336' }]}>
-          <Text style={styles.circleText}>Це питання безпеки</Text>
+      <View style={styles.card}>
+        <View style={styles.diagram}>
+          <View style={[styles.circle, { backgroundColor: '#4CAF50' }]}>
+            <Text style={styles.circleText}>Я стурбований</Text>
+          </View>
+          <Text style={styles.arrow}>➡️</Text>
+          <View style={[styles.circle, { backgroundColor: '#FFEB3B' }]}>
+            <Text style={styles.circleText}>Я дуже хвилююсь</Text>
+          </View>
+          <Text style={styles.arrow}>➡️</Text>
+          <View style={[styles.circle, { backgroundColor: '#F44336' }]}>
+            <Text style={styles.circleText}>Це питання безпеки</Text>
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -42,33 +46,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: '#F7FDF9', // Light and soothing background
+  },
+  card: {
+    marginBottom: 16,
+    padding: 16,
+    backgroundColor: '#FFECB3', // Soft yellow for cards
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   title: {
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
-    marginBottom: 16,
-    backgroundColor: '#FFCC80',
-    padding: 10,
-  },
-  section: {
-    marginBottom: 16,
-    padding: 10,
-    backgroundColor: '#FFECB3',
-    borderRadius: 8,
+    color: '#F57C00',
   },
   bulletPoint: {
     fontSize: 16,
     color: '#333',
     marginBottom: 8,
+    lineHeight: 22,
   },
   diagram: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 10,
   },
   circle: {
     width: 100,
@@ -76,16 +83,16 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 10,
+    marginHorizontal: 5,
   },
   circleText: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#FFF',
     textAlign: 'center',
     fontWeight: 'bold',
   },
   arrow: {
-    fontSize: 24,
+    fontSize: 10,
     color: '#333',
   },
 });

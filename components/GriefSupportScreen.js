@@ -2,32 +2,48 @@ import React from 'react';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 const GriefSupportScreen = () => {
+  const points = [
+    {
+      title: 'Надайте факти',
+      description: 'Якщо ви можете, надайте факти про обставини втрати.',
+    },
+    {
+      title: 'Активне слухання',
+      description: 'Сконцентруйтесь на ситуації та вислухайте скорботну людину.',
+    },
+    {
+      title: 'Нормалізація',
+      description:
+        'Не применшуючи втрати, скажіть скорботній людині, що її реакція нормальна та зрозуміла.',
+    },
+    {
+      title: 'Використовуйте ім’я',
+      description: 'Не бійтеся називати покійного на ім’я.',
+    },
+    {
+      title: 'Витримка',
+      description:
+        'Будьте відкритими, щоб вислухати емоційний біль скорботної людини, вам не потрібно «виправляти» її.',
+    },
+    {
+      title: 'Зберігайте власні психологічні межі',
+      description:
+        'Чиясь втрата не обов\'язково є вашою втратою; ви можете надавати допомогу, не поглинаючи це горе.',
+    },
+  ];
+
   return (
     <ScrollView style={styles.container}>
       {/* Title Section */}
       <Text style={styles.title}>Як розмовляти з людиною у скорботі</Text>
 
-      {/* Guidelines Section */}
-      <View style={styles.section}>
-        <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Надайте факти:</Text> Якщо ви можете, надайте факти про обставини втрати.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Активне слухання:</Text> Сконцентруйтесь на ситуації та вислухайте скорботну людину.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Нормалізація:</Text> Не применшуючи втрати, скажіть скорботній людині, що її реакція нормальна та зрозуміла.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Використовуйте ім’я:</Text> Не бійтеся називати покійного на ім’я.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Витримка:</Text> Будьте відкритими, щоб вислухати емоційний біль скорботної людини, вам не потрібно «виправляти» її.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          <Text style={styles.bold}>Зберігайте власні психологічні межі:</Text> Чиясь втрата не обов'язково є вашою втратою; ви можете надавати допомогу, не поглинаючи це горе.
-        </Text>
-      </View>
+      {/* Cards for Each Point */}
+      {points.map((point, index) => (
+        <View key={index} style={styles.card}>
+          <Text style={styles.cardTitle}>{point.title}</Text>
+          <Text style={styles.cardDescription}>{point.description}</Text>
+        </View>
+      ))}
     </ScrollView>
   );
 };
@@ -48,26 +64,27 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 10,
   },
-  section: {
-    marginBottom: 16,
+  card: {
     padding: 16,
     backgroundColor: '#EAFBF6', // Light green for encouragement
-    borderRadius: 10,
+    borderRadius: 12,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
+    marginBottom: 12,
   },
-  bulletPoint: {
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1B5E20',
+    marginBottom: 8,
+  },
+  cardDescription: {
     fontSize: 16,
     color: '#333',
     lineHeight: 22,
-    marginBottom: 8,
-  },
-  bold: {
-    fontWeight: 'bold',
-    color: '#1B5E20', // Highlighted green for emphasis
   },
 });
 

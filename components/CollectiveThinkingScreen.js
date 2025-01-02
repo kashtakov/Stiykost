@@ -5,10 +5,12 @@ const CollectiveThinkingScreen = () => {
   return (
     <ScrollView style={styles.container}>
       {/* Title Section */}
-      <Text style={styles.title}>Колективне мислення</Text>
+      <View style={styles.card}>
+        <Text style={styles.title}>Колективне мислення</Text>
+      </View>
 
       {/* Group Members Section */}
-      <View style={styles.section}>
+      <View style={styles.card}>
         <Text style={styles.sectionTitle}>Члени групи</Text>
         <Text style={styles.bulletPoint}>• Грайте по черзі в “адвоката диявола”</Text>
         <Text style={styles.subBullet}>– Мислити критично</Text>
@@ -21,7 +23,7 @@ const CollectiveThinkingScreen = () => {
       </View>
 
       {/* Leaders Section */}
-      <View style={styles.section}>
+      <View style={styles.card}>
         <Text style={styles.sectionTitle}>Лідери (формальні та неформальні)</Text>
         <Text style={styles.bulletPoint}>• Вискажіть свої побажання в останню чергу</Text>
         <Text style={styles.bulletPoint}>• Надавайте людям роль скептика — робіть їх відповідальними</Text>
@@ -42,22 +44,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#FFF8E1',
+    backgroundColor: '#F7FDF9', // Soothing background
+  },
+  card: {
+    marginBottom: 16,
+    padding: 16,
+    backgroundColor: '#FFFDE7', // Soft yellow card background
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3, // Subtle elevation for card effect
   },
   title: {
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#000',
-    marginBottom: 16,
-    backgroundColor: '#FFEB3B',
-    padding: 10,
-  },
-  section: {
-    marginBottom: 16,
-    padding: 10,
-    backgroundColor: '#FFFDE7',
-    borderRadius: 8,
+    color: '#FBC02D',
+    marginBottom: 8,
   },
   sectionTitle: {
     fontSize: 18,
@@ -72,8 +77,8 @@ const styles = StyleSheet.create({
   },
   subBullet: {
     fontSize: 16,
-    color: '#333',
-    marginLeft: 20,
+    color: '#555',
+    marginLeft: 16,
     marginBottom: 4,
   },
   footer: {

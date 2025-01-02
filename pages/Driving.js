@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFDE7", // Soft yellow for a warm and inviting tone
-    padding: 16,
+    padding: 8,
   },
 });
 
