@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, View, Text, Image } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import Header from "../text-components/Header";
 import TwoColumnParagraph from "../text-components/TwoColunmParagraph";
+import StressComponent from "../components/StressComponent";
 
 function StressScreen({ navigation }) {
   useFocusEffect(() => {
@@ -13,42 +14,7 @@ function StressScreen({ navigation }) {
   });
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.content}>
-        {/* Compass Section */}
-        <Header
-          title="Компас стійкості"
-          fontSize={32}
-          color="#FF6347"
-          textAlign="center"
-          style={styles.header}
-        />
-        <Image
-          source={require("../assets/images/compass.png")}
-          style={styles.image}
-        />
-
-        {/* Stress Bucket Section */}
-        <Header
-          title="Відро стресу"
-          fontSize={32}
-          color="#FF6347"
-          textAlign="center"
-          style={styles.header}
-        />
-        <TwoColumnParagraph
-          data={[
-            { type: "image", source: require("../assets/images/bucket.png") },
-            "Стрес ллється у відро. Якщо відро переповнено, проблеми спричиняють емоційний зрив. Добре справлятися = задіяти кран випуску стресу. Погано справлятися = не задіяти кран та наповнювати відро.",
-          ]}
-          columnGap={15}
-          fontSize={18}
-          color="#000"
-          imageStyle={styles.bucketImage}
-          style={styles.paragraphContainer}
-        />
-      </View>
-    </ScrollView>
+    <StressComponent/>
   );
 }
 

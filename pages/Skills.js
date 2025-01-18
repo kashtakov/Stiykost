@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Text, ScrollView, StyleSheet } from "react-native";
 import SkillsPsycho from "../components/SkillsPsycho";
 import SkillsORT from "../components/SkillsORT";
+import OrtTable from "../components/OrtTable";
 
 
 
@@ -16,6 +17,7 @@ function SkillsScreen() {
   <SkillsPsycho/>
   <Text style={styles.titeleText}>Навички стійкості під час операцій</Text>
   <SkillsORT/>
+  
 
       </ScrollView>
 
