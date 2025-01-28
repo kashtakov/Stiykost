@@ -3,7 +3,7 @@
     "name": "Stiykost",
     "slug": "Stiykost",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -29,6 +29,12 @@
       "eas": {
         "projectId": "59be08a2-b6f5-473a-a62c-178886c6193e"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/59be08a2-b6f5-473a-a62c-178886c6193e"
     }
   }
 }
